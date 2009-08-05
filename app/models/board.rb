@@ -11,6 +11,9 @@ class Board < ActiveRecord::Base
   # in the layout_text and then produce the layout.
   serialize :layout_text
 
+  #--------------------------------------------------------------------------
+  # instance methods
+
   #
   # The layout array for this board.
   #
@@ -41,4 +44,31 @@ class Board < ActiveRecord::Base
     end
     @layout
   end
+
+  #
+  # Reset the layout so that it will be rebuilt from layout_text
+  private
+  def reset_layout
+    @layout = nil
+  end
+
+  # Replace current layout with a blank layout of [rows]x[cols]
+  public
+  def clear_layout(cols, rows)
+    reset_layout
+    row = (1..cols).collect { :blank }
+    self.layout_text = (1..rows).collect { row }
+    self.layout
+  end
+
+  # Set the tile at col,row to the Tile so named
+  def set_tile(col, row, name)
+    reset_layout
+    layout_text[col][row] = name
+  end
+  
+  #--------------------------------------------------------------------------
+  # class methods
+
+  puts "this is awesome!!!"
 end

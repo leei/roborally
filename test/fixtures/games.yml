@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  started: false
+  host_id: 1
+  max_players: 1
+  board_id: 1
+
+two:
+  started: false
+  host_id: 1
+  max_players: 1
+  board_id: 1

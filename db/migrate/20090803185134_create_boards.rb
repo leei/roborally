@@ -1,7 +1,7 @@
 class CreateBoards < ActiveRecord::Migration
   def self.up
     create_table :boards do |t|
-      t.string :name, :size => 32
+      t.string :name, :limit => 32
       t.text :description
       t.text :layout_text
       t.integer :max_players

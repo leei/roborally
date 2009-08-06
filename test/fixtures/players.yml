@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  game_id: 1
+  user_id: 1
+  robot_id: 1
+  x: 1
+  y: 1
+  dir: MyString
+  lives: 1
+  health: 1
+  flags: 1
+
+two:
+  game_id: 1
+  user_id: 1
+  robot_id: 1
+  x: 1
+  y: 1
+  dir: MyString
+  lives: 1
+  health: 1
+  flags: 1

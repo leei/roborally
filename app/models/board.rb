@@ -15,6 +15,13 @@ class Board < ActiveRecord::Base
   # instance methods
 
   #
+  # Refer to boards by name throughout the interface.
+  #
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
+
+  #
   # The layout array for this board.
   #
   # It is derived from the layout_text by walking through the
@@ -57,7 +64,7 @@ class Board < ActiveRecord::Base
   def clear_layout(cols, rows)
     reset_layout
     row = (1..cols).collect { :blank }
-    self.layout_text = (1..rows).collect { row }
+    self.layout_text = (1..rows).collect { row.dup }
     self.layout
   end
 
@@ -66,7 +73,7 @@ class Board < ActiveRecord::Base
     reset_layout
     layout_text[col][row] = name
   end
-  
+
   #--------------------------------------------------------------------------
   # class methods
 

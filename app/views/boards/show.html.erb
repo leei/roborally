@@ -1,0 +1,13 @@
+<h1>Boards#show: <%= @board.name %> </h1>
+
+<p><%=h @board.description %></p>
+
+<table border="1"><tbody>
+  <% for row in @board.layout_text %>
+  <tr>
+    <% for tile in row %>
+    <td> <%= tile -%> </td>
+    <% end %>
+  </tr>
+  <% end %>
+</tbody></table>

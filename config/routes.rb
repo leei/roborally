@@ -39,6 +39,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resource :user_session
 
+  map.resources :boards
+
   map.root :controller => :user_sessions, :action => :new
 
   # Install the default routes as the lowest priority.

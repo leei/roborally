@@ -12,7 +12,7 @@
 ActiveRecord::Schema.define(:version => 20090806042005) do
 
   create_table "boards", :force => true do |t|
-    t.string   "name"
+    t.string   "name",        :limit => 32
     t.text     "description"
     t.text     "layout_text"
     t.integer  "max_players"
@@ -53,12 +53,14 @@ ActiveRecord::Schema.define(:version => 20090806042005) do
   add_index "players", ["user_id"], :name => "index_players_on_user_id"
 
   create_table "robots", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :limit => 32
     t.string   "sprite"
     t.string   "string"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "robots", ["name"], :name => "index_robots_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "login",                             :null => false

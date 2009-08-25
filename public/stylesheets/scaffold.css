@@ -62,3 +62,11 @@ table.formTable label {
     font-style: italic;
     margin-left: 2px;
 }
+
+table#board_pieces td {
+    border: 1px solid silver;
+}
+
+#board_layout td {
+    border: 1px solid black;
+}

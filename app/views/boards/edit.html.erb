@@ -1,2 +1,56 @@
 <h1>Boards#edit: <%=h @board.name %></h1>
-<p>Find me in app/views/boards/edit.html.erb</p>
+
+<%= javascript_tag "var layout = #{@board.layout_text.to_json};" %>
+
+<% form_for @board do |f| %>
+<%= f.error_messages %>
+<table class="formTable"><tbody>
+  <%= render :partial => "form", :object => f %>
+  <tr>
+    <td colspan="2"><%= f.hidden_field :layout_text_json %>
+    <table><tbody>
+      <tr><td>
+        <table><tbody id="board_layout">
+        </tbody></table>
+      </td>
+      <td>
+        <table id="board_pieces"><tbody>
+          <tr>
+            <th colspan="4">
+              Board Pieces: <i>Drag and drop to edit layout.</i>
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <%= board_draggable :blank %>
+            </td>
+            <td>
+              <%= board_draggable :start %>
+            </td>
+          </tr>
+          <tr>
+            <td><%= board_draggable :belt_n_1 %></td>
+            <td><%= board_draggable :belt_s_1 %></td>
+            <td><%= board_draggable :belt_e_1 %></td>
+            <td><%= board_draggable :belt_w_1 %></td>
+          </tr>
+          <tr>
+            <td><%= board_draggable :belt_n_2 %></td>
+            <td><%= board_draggable :belt_s_2 %></td>
+            <td><%= board_draggable :belt_e_2 %></td>
+            <td><%= board_draggable :belt_w_2 %></td>
+          </tr>
+        </tbody></table>
+      </td>
+      </tr>
+    </tbody></table>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><%= submit_tag "Save" %></td>
+  </tr>
+</tbody></table>
+<% end %>
+
+<%= javascript_tag "edit_board_layout('board_layout', 'board_layout_text_json')" %>

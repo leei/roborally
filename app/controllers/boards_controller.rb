@@ -40,6 +40,12 @@ class BoardsController < ApplicationController
   end
 
   def update
+    @board.attributes = params[:board]
+    if @board.save
+      redirect_to board_url(@board)
+    else
+      render :action => :edit
+    end
   end
 
   def destroy

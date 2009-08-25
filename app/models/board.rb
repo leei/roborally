@@ -69,6 +69,20 @@ class Board < ActiveRecord::Base
   end
 
   #
+  # Show the layout text in a JSON string.
+  #
+  def layout_text_json
+    self.layout_text.to_json
+  end
+
+  #
+  # Show the layout text in a JSON string.
+  #
+  def layout_text_json=(text)
+    self.layout_text = JSON.parse(text)
+  end
+
+  #
   # How many rows are there in the layout?
   #
   def rows

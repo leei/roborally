@@ -1,6 +1,8 @@
 <h1>Boards#show: <%= @board.name %> </h1>
 
-<p><%=h @board.description %></p>
+<p><%=h @board.description %>:
+<%= board_operations(@board, current_user) %>
+</p>
 
 <table border="1"><tbody>
   <% for row in @board.layout_text %>

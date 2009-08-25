@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090806042005) do
+ActiveRecord::Schema.define(:version => 20090824224607) do
 
   create_table "boards", :force => true do |t|
     t.string   "name",        :limit => 32
@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(:version => 20090806042005) do
     t.integer  "max_players"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "creator_id"
   end
 
+  add_index "boards", ["creator_id"], :name => "index_boards_on_creator_id"
   add_index "boards", ["name"], :name => "index_boards_on_name", :unique => true
 
   create_table "games", :force => true do |t|

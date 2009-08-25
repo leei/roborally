@@ -1,1 +1,5 @@
-<li><%= link_to board.name, board_url(board) %>: <%=h board.description %></li>
+<li>
+  <%= link_to board.name, board_url(board) %>:
+  <%=h board.description %>
+  <%= board_operations(board, current_user) %>
+</li>

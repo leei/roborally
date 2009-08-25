@@ -1,5 +1,9 @@
 <h1>Boards#index</h1>
 <div>
+  Boards: <%= board_links %>.
+  <% if current_user %> <%= link_to "Create Board", new_board_url() %> <% end %>
+</div>
+<div>
   <ul>
     <%= render :partial => "board_li", :collection => @boards, :as => :board %>
   </ul>

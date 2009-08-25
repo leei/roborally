@@ -1,2 +1,27 @@
 <h1>Boards#new</h1>
-<p>Find me in app/views/boards/new.html.erb</p>
+
+<% form_for @board do |f| %>
+<%= f.error_messages %>
+<table class="formTable"><tbody>
+  <tr>
+    <th><%= f.label :name %></th>
+    <td><%= f.text_field :name, :size => 32 %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :description %></th>
+    <td><%= f.text_area :description, :rows => 4, :cols => 32 %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :max_players %></th>
+    <td>
+      <%= f.text_field :max_players, :size => 4 %>
+      <%= f.label :rows %> <%= f.text_field :rows, :size => 4 %>
+      <%= f.label :columns %> <%= f.text_field :columns, :size => 4 %>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><%= submit_tag "Create" %></td>
+  </tr>
+</tbody></table>
+<% end %>

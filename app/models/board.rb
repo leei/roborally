@@ -1,9 +1,18 @@
 class Board < ActiveRecord::Base
+  # Each board has a creator.
+  belongs_to :creator, :class_name => "User"
+
   # Ensure that the name is unique
   validates_uniqueness_of :name
 
+  # Ensure that it is at least 3 characters long.
+  validates_length_of :name, :in => 3..32
+
   # Ensure that max_players is [2..8]
   validates_numericality_of :max_players, :greater_than => 1, :less_than => 9
+
+  # Ensure that we are properly marking the creator
+  validates_presence_of :creator_id
 
   # The layout_text describes the board's layout
   # It will consist of a NxN sequence of tile names
@@ -19,6 +28,13 @@ class Board < ActiveRecord::Base
   #
   def to_param
     "#{id}-#{name.parameterize}"
+  end
+
+  #
+  # A user can edit if he is the creator.
+  #
+  def can_edit?(user)
+    user && self.creator_id == user.id
   end
 
   #
@@ -50,6 +66,20 @@ class Board < ActiveRecord::Base
       raise Error("Bad tiles: %s" % bad_tiles.join(", "))
     end
     @layout
+  end
+
+  #
+  # How many rows are there in the layout?
+  #
+  def rows
+    layout_text.blank? ? 12 : layout.size
+  end
+
+  #
+  # How many columns are there in the layout?
+  #
+  def columns
+    layout_text.blank? ? 12 : layout[0].size
   end
 
   #

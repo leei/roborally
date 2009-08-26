@@ -63,10 +63,36 @@ table.formTable label {
     margin-left: 2px;
 }
 
+table#boardEdit td.layout {
+}
+
+table#boardEdit td.pieces {
+    vertical-align: top;
+}
+
+table.board td {
+    width: 32px;
+    height: 32px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 8pt;
+    line-height: 9pt;
+    padding: 1px;
+}
+
 table#board_pieces td {
     border: 1px solid silver;
 }
 
-#board_layout td {
-    border: 1px solid black;
-}
+table.board td.blank { background-color: #ccc; }
+table.board td.start { background-color: #cfc; }
+
+table.board td.belt_n_1 { background-color: #ffc; }
+table.board td.belt_s_1 { background-color: #ffc; }
+table.board td.belt_e_1 { background-color: #ffc; }
+table.board td.belt_w_1 { background-color: #ffc; }
+
+table.board td.belt_n_2 { background-color: #ccf; }
+table.board td.belt_s_2 { background-color: #ccf; }
+table.board td.belt_e_2 { background-color: #ccf; }
+table.board td.belt_w_2 { background-color: #ccf; }

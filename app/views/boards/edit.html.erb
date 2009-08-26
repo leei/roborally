@@ -8,37 +8,35 @@
   <%= render :partial => "form", :object => f %>
   <tr>
     <td colspan="2"><%= f.hidden_field :layout_text_json %>
-    <table><tbody>
-      <tr><td>
-        <table><tbody id="board_layout">
-        </tbody></table>
-      </td>
-      <td>
-        <table id="board_pieces"><tbody>
+    <table id="boardEdit"><tbody>
+      <tr>
+        <td class="layout">
+          <table class="board">
+            <tbody id="board_layout"></tbody>
+          </table>
+        </td>
+        <td class="pieces">
+          <table id="board_pieces" class="board"><tbody>
+            <tr>
+              <th colspan="4">
+                Board Pieces:<br /><i>Drag and drop to edit layout.</i>
+              </th>
+            </tr>
           <tr>
-            <th colspan="4">
-              Board Pieces: <i>Drag and drop to edit layout.</i>
-            </th>
+            <%= board_draggable :blank %>
+            <%= board_draggable :start %>
           </tr>
           <tr>
-            <td>
-              <%= board_draggable :blank %>
-            </td>
-            <td>
-              <%= board_draggable :start %>
-            </td>
+            <%= board_draggable :belt_n_1 %>
+            <%= board_draggable :belt_s_1 %>
+            <%= board_draggable :belt_e_1 %>
+            <%= board_draggable :belt_w_1 %>
           </tr>
           <tr>
-            <td><%= board_draggable :belt_n_1 %></td>
-            <td><%= board_draggable :belt_s_1 %></td>
-            <td><%= board_draggable :belt_e_1 %></td>
-            <td><%= board_draggable :belt_w_1 %></td>
-          </tr>
-          <tr>
-            <td><%= board_draggable :belt_n_2 %></td>
-            <td><%= board_draggable :belt_s_2 %></td>
-            <td><%= board_draggable :belt_e_2 %></td>
-            <td><%= board_draggable :belt_w_2 %></td>
+            <%= board_draggable :belt_n_2 %>
+            <%= board_draggable :belt_s_2 %>
+            <%= board_draggable :belt_e_2 %>
+            <%= board_draggable :belt_w_2 %>
           </tr>
         </tbody></table>
       </td>

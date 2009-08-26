@@ -16,16 +16,18 @@ function edit_board_layout(table_id, data_id) {
         var name = row[j];
         var id = "l_" + i + "_" + j;
         var td = new Element("td", {id: id});
+        td.className = name;
         td.idx_i = i;
         td.idx_j = j;
         tr.appendChild(td);
-        td.update(name);
+        td.update(name.humanize());
         Droppables.add(id, {
           onDrop: function(drag) {
             var name = drag.id.replace(/board_/, '');
             layout[this.element.idx_i][this.element.idx_j] = name;
             data_field.value = layout.toSource();
-            this.element.update(name);
+            this.element.className = name;
+            this.element.update(name.humanize());
           }
         });
       }
@@ -36,3 +38,9 @@ function edit_board_layout(table_id, data_id) {
   }
   return true;
 }
+
+  String.prototype.humanize = function() {
+    var str = this.replace(/[_-]+/g, ' ');
+    var initial = this.charAt(0).toUpperCase();
+    return initial + str.substr(1);
+  }

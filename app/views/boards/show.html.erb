@@ -4,11 +4,11 @@
 <%= board_operations(@board, current_user) %>
 </p>
 
-<table border="1"><tbody>
+<table class="board"><tbody>
   <% for row in @board.layout_text %>
   <tr>
     <% for tile in row %>
-    <td> <%= tile -%> </td>
+    <%= content_tag "td", tile.to_s.humanize, :class => tile %>
     <% end %>
   </tr>
   <% end %>

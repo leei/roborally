@@ -17,7 +17,7 @@ module BoardsHelper
 
   def board_draggable(name)
     id = "board_#{name}"
-    content_tag(:div, name.to_s.humanize, :id => id) <<
+    content_tag(:td, name.to_s.humanize, :id => id, :class => name) <<
       draggable_element(id, :ghosting => true, :revert => true)
   end
 end

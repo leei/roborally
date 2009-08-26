@@ -86,6 +86,7 @@ table#board_pieces td {
 
 table.board td.blank { background-color: #ccc; }
 table.board td.start { background-color: #cfc; }
+table.board td.pit { background-color: #000; color: #fff; }
 
 table.board td.belt_n_1 { background-color: #ffc; }
 table.board td.belt_s_1 { background-color: #ffc; }
@@ -96,3 +97,6 @@ table.board td.belt_n_2 { background-color: #ccf; }
 table.board td.belt_s_2 { background-color: #ccf; }
 table.board td.belt_e_2 { background-color: #ccf; }
 table.board td.belt_w_2 { background-color: #ccf; }
+
+table.board td.gear_l { background-color: #ccc; color: #822; }
+table.board td.gear_r { background-color: #ccc; color: #282; }

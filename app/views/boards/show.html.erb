@@ -8,7 +8,8 @@
   <% for row in @board.layout_text %>
   <tr>
     <% for tile in row %>
-    <%= content_tag "td", tile.to_s.humanize, :class => tile %>
+    <% content = (tile == :start ? tile.to_s.humanize : "") %>
+    <%= content_tag "td", content, :class => tile %>
     <% end %>
   </tr>
   <% end %>

@@ -20,14 +20,14 @@ function edit_board_layout(table_id, data_id) {
         td.idx_i = i;
         td.idx_j = j;
         tr.appendChild(td);
-        td.update(name.humanize());
+        if (name == "start") { td.update(name.humanize()); }
         Droppables.add(id, {
           onDrop: function(drag) {
             var name = drag.id.replace(/board_/, '');
             layout[this.element.idx_i][this.element.idx_j] = name;
             data_field.value = layout.toSource();
             this.element.className = name;
-            this.element.update(name.humanize());
+            if (name == "start") { this.element.update(name.humanize()); }
           }
         });
       }

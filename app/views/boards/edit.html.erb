@@ -16,35 +16,49 @@
           </table>
         </td>
         <td class="pieces">
-          <table id="board_pieces" class="board"><tbody>
-            <tr>
-              <th colspan="4">
-                Board Pieces:<br /><i>Drag and drop to edit layout.</i>
-              </th>
-            </tr>
-          <tr>
-            <%= board_draggable :blank %>
-            <%= board_draggable :start %>
-            <%= board_draggable :pit %>
-          </tr>
-          <tr>
-            <%= board_draggable :belt_n_1 %>
-            <%= board_draggable :belt_s_1 %>
-            <%= board_draggable :belt_e_1 %>
-            <%= board_draggable :belt_w_1 %>
-          </tr>
-          <tr>
-            <%= board_draggable :belt_n_2 %>
-            <%= board_draggable :belt_s_2 %>
-            <%= board_draggable :belt_e_2 %>
-            <%= board_draggable :belt_w_2 %>
-          </tr>
-          <tr>
-            <%= board_draggable :gear_l %>
-            <%= board_draggable :gear_r %>
-          </tr>
-        </tbody></table>
-      </td>
+          <h3>Board Pieces</h3>
+          <p><i>Drag and drop to edit layout.</i></p>
+          <div id="boardElements" class="board">
+            <div>
+              <%= board_draggable :blank %>
+              <%= board_draggable :start %>
+              <%= board_draggable :pit %>
+              <div class="empty"></div>
+              <%= board_draggable :gear_l %>
+              <%= board_draggable :gear_r %>
+            </div>
+            <div>
+              <%= board_draggable :belt_n_1 %>
+              <%= board_draggable :belt_s_1 %>
+              <%= board_draggable :belt_e_1 %>
+              <%= board_draggable :belt_w_1 %>
+              <%= board_draggable :belt_n_2 %>
+              <%= board_draggable :belt_s_2 %>
+              <%= board_draggable :belt_e_2 %>
+              <%= board_draggable :belt_w_2 %>
+            </div>
+            <div>
+              <%= board_draggable :turn_n_l %>
+              <%= board_draggable :turn_s_l %>
+              <%= board_draggable :turn_e_l %>
+              <%= board_draggable :turn_w_l %>
+              <%= board_draggable :turn_n_l_2 %>
+              <%= board_draggable :turn_s_l_2 %>
+              <%= board_draggable :turn_e_l_2 %>
+              <%= board_draggable :turn_w_l_2 %>
+            </div>
+            <div>
+              <%= board_draggable :turn_n_r %>
+              <%= board_draggable :turn_s_r %>
+              <%= board_draggable :turn_e_r %>
+              <%= board_draggable :turn_w_r %>
+              <%= board_draggable :turn_n_r_2 %>
+              <%= board_draggable :turn_s_r_2 %>
+              <%= board_draggable :turn_e_r_2 %>
+              <%= board_draggable :turn_w_r_2 %>
+            </div>
+          </div>
+        </td>
       </tr>
     </tbody></table>
     </td>

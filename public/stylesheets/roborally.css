@@ -1,0 +1,167 @@
+
+table.formTable>tbody>tr>th {
+    vertical-align: top;
+    text-align: left;
+}
+
+table.formTable label {
+    font-weight: normal;
+    font-style: italic;
+    margin-left: 2px;
+}
+
+table#boardEdit td.layout {
+}
+
+table#boardEdit td.pieces {
+    vertical-align: top;
+}
+
+table.board {
+    border-spacing: 0px 0px;
+    border: 2px solid black;
+}
+table.board tr>td {
+    width: 48px;
+    height: 48px;
+    /*border: 1px solid black;*/
+    text-align: center;
+    font-size: 8pt;
+    line-height: 9pt;
+    padding: 1px;
+}
+
+#boardElements>div {
+    clear: both;
+}
+
+#boardElements>div>div {
+    float: left;
+    width: 48px;
+    height: 48px;
+    border: 1px solid silver;
+    text-align: center;
+    font-size: 8pt;
+    line-height: 9pt;
+    padding: 1px;
+    margin: 1px;
+}
+
+#boardElements .empty { border: none; padding: 2px; }
+
+.board .blank {
+    background: url(/images/blank_48.png);
+    background-color: #ccc;
+}
+.board .start {
+    background-color: #cfc;
+}
+.board .pit {
+    background: url(/images/pit_base_48.png);
+    background-color: #000; color: #fff;
+}
+
+.board .belt_n_1 {
+    background: url(/images/belt_n_48.png);
+    background-color: #ffc; }
+.board .belt_s_1 {
+    background: url(/images/belt_s_48.png);
+    background-color: #ffc;
+}
+.board .belt_e_1 {
+    background: url(/images/belt_e_48.png);
+    background-color: #ffc;
+}
+.board .belt_w_1 {
+    background: url(/images/belt_w_48.png);
+    background-color: #ffc;
+}
+
+.board .belt_n_2 {
+    background: url(/images/belt_n_2_48.png);
+    background-color: #ccf;
+}
+.board .belt_s_2 {
+    background-color: #ccf;
+    background: url(/images/belt_s_2_48.png);
+}
+.board .belt_e_2 {
+    background-color: #ccf;
+    background: url(/images/belt_e_2_48.png);
+}
+.board .belt_w_2 {
+    background-color: #ccf;
+    background: url(/images/belt_w_2_48.png);
+}
+
+.board .gear_l {
+    background-color: #ccc; color: #822;
+    background: url(/images/gear_l_48.png);
+}
+.board .gear_r {
+    background-color: #ccc; color: #282;
+    background: url(/images/gear_r_48.png);
+}
+
+.board .turn_n_l {
+    background-color: #ffc; color: #822;
+    background: url(/images/turn_n_l_48.png);
+}
+.board .turn_s_l {
+    background-color: #ffc; color: #822;
+    background: url(/images/turn_s_l_48.png)}
+.board .turn_e_l {
+    background-color: #ffc; color: #822;
+    background: url(/images/turn_e_l_48.png)}
+.board .turn_w_l {
+    background-color: #ffc; color: #822;
+    background: url(/images/turn_w_l_48.png)}
+.board .turn_n_r {
+    background-color: #ffc; color: #282;
+    background: url(/images/turn_n_r_48.png);
+}
+.board .turn_s_r {
+    background-color: #ffc; color: #282;
+    background: url(/images/turn_s_r_48.png);
+}
+.board .turn_e_r {
+    background-color: #ffc; color: #282;
+    background: url(/images/turn_e_r_48.png);
+}
+.board .turn_w_r {
+    background-color: #ffc; color: #282;
+    background: url(/images/turn_w_r_48.png);
+}
+
+.board .turn_n_l_2 {
+    background-color: #ccf; color: #822;
+    background: url(/images/turn_n_l_2_48.png);
+}
+.board .turn_s_l_2 {
+    background-color: #ccf; color: #822;
+    background: url(/images/turn_s_l_2_48.png);
+}
+.board .turn_e_l_2 {
+    background-color: #ccf; color: #822;
+    background: url(/images/turn_e_l_2_48.png);
+}
+.board .turn_w_l_2 {
+    background-color: #ccf; color: #822;
+    background: url(/images/turn_w_l_2_48.png);
+}
+.board .turn_n_r_2 {
+    background-color: #ccf; color: #282;
+    background: url(/images/turn_n_r_2_48.png);
+}
+.board .turn_s_r_2 {
+    background-color: #ccf; color: #282;
+    background: url(/images/turn_s_r_2_48.png);
+}
+.board .turn_e_r_2 {
+    background-color: #ccf; color: #282;
+    background: url(/images/turn_e_r_2_48.png);
+}
+.board .turn_w_r_2 {
+    background-color: #ccf; color: #282;
+    background: url(/images/turn_w_r_2_48.png);
+}

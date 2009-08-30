@@ -4,8 +4,9 @@
   <% if current_user %> <%= link_to "Create Board", new_board_url() %> <% end %>
 </div>
 <div>
-  <ul>
+  <table><tbody>
+    <tr><th>Name</th> <th>Description</th> <th>Creator</th> <th></th></tr>
     <%= render :partial => "board_li", :collection => @boards, :as => :board %>
-  </ul>
+  </tbody></table>
 </div>
 

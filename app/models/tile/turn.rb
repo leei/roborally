@@ -1,3 +1,6 @@
+# Copyright 2009, Lee Iverson and Maxwell Iverson
+# See file COPYRIGHT for terms and conditions
+
 #
 # A Turn is a kind of belt that rotates the robot as it transports.
 #

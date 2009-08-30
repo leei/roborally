@@ -1,3 +1,6 @@
+# Copyright 2009, Lee Iverson and Maxwell Iverson
+# See file COPYRIGHT for terms and conditions
+
 class Tile
   #
   # Find a tile, given its name.

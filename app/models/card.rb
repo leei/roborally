@@ -1,3 +1,6 @@
+# Copyright 2009, Lee Iverson and Maxwell Iverson
+# See file COPYRIGHT for terms and conditions
+
 class Card
   private
 
@@ -29,10 +32,11 @@ class Card
       ALL_DESCRS.each do |name, seq|
         args = name.to_s.split(/_/)
         klass = self.const_get(args.shift.to_s.camelize)
-        pri = seq[0]
-        while pri <= seq[1]
+        (first, last, by) = seq
+        pri = first
+        while pri <= last
           cards << klass.new(pri, *args) if klass
-          pri += seq[2]
+          pri += by
         end
       end
       @@all_cards = cards
@@ -61,6 +65,10 @@ class Card
 
     def deal
       @cards.shift
+    end
+
+    def size
+      @cards.size
     end
   end
 end

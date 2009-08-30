@@ -1,3 +1,6 @@
+# Copyright 2009, Lee Iverson and Maxwell Iverson
+# See file COPYRIGHT for terms and conditions
+
 #
 # The gears, which rotate a robot.  There are two gear_l and gear_r for
 # rotating left and right.

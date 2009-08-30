@@ -1,3 +1,6 @@
+# Copyright 2009, Lee Iverson and Maxwell Iverson
+# See file COPYRIGHT for terms and conditions
+
 class User < ActiveRecord::Base
   acts_as_authentic do |c|
     # optional configuration

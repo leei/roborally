@@ -1,6 +1,9 @@
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
+# Copyright 2009, Lee Iverson and Maxwell Iverson
+# See file COPYRIGHT for terms and conditions
 
+#
+# A Belt tile that moves the robot in the given direction and speed.
+#
 class Tile::Belt
   @@instances = []
 

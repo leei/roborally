@@ -1,3 +1,9 @@
+# Copyright 2009, Lee Iverson and Maxwell Iverson
+# See file COPYRIGHT for terms and conditions
+
+#
+# A Roborally game board.
+#
 class Board < ActiveRecord::Base
   # Each board has a creator.
   belongs_to :creator, :class_name => "User"

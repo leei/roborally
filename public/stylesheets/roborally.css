@@ -1,3 +1,8 @@
+.login_info {
+    float: right;
+    background-color: #ff8;
+    border: 1px solid silver;
+}
 
 table.formTable>tbody>tr>th {
     vertical-align: top;

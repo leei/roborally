@@ -1,6 +1,19 @@
-<tr>
-  <td><%= link_to board.name, board_url(board) %></td>
-  <td><%=h board.description %></td>
-  <td><%= link_to board.creator.login, user_url(board.creator) %></td>
-  <td><%= board_operations(board, current_user) %><td>
+<tr class="<%= cycle('even', 'odd', :name => 'board_row') -%>">
+  <td class="name">
+    <%= link_to board.name, board_url(board) %>
+  </td>
+  <td class="creator">
+    <%= link_to board.creator.login, user_url(board.creator) %>
+  </td>
+  <td class="date">
+    <span time="<%= board.created_at.to_formatted_s(:rfc822) -%>">
+      <%= board.created_at.to_formatted_s(:short) %>
+    </span>
+  </td>
+  <td class="description">
+    <%=h board.description %>
+  </td>
+  <td>
+    <%= board_operations(board, current_user) %>
+  </td>
 </tr>

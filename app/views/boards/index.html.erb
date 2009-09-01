@@ -1,12 +1,55 @@
 <h1>Boards#index</h1>
+<div class="page_numbers">
+  <%= will_paginate @boards %>
+</div>
 <div>
   Boards: <%= board_links %>.
   <% if current_user %> <%= link_to "Create Board", new_board_url() %> <% end %>
 </div>
-<div>
-  <table><tbody>
-    <tr><th>Name</th> <th>Description</th> <th>Creator</th> <th></th></tr>
-    <%= render :partial => "board_li", :collection => @boards, :as => :board %>
-  </tbody></table>
-</div>
+<table id="boards" class="boards"><tbody>
+  <tr>
+    <th class="name">
+      <% if params[:order] == 'name_a' %>
+      <%= link_to "Name&nbsp;>", {:overwrite_params => {:order => 'name_d'}},
+          :title => "Name of board. Click to sort." %>
+      <% elsif params[:order] == 'name_d' %>
+      <%= link_to "Name&nbsp;<", {:overwrite_params => {:order => nil}},
+          :title => "Name of board." %>
+      <% else %>
+      <%= link_to "Name", {:overwrite_params => {:order => 'name_a'}},
+          :title => "Name of board. Click to sort." %>
+      <% end %>
+    </th>
+    <th class="creator">
+      <% if params[:order] == 'creator_a' %>
+      <%= link_to "User&nbsp;>", {:overwrite_params => {:order => 'creator_d'}},
+          :title => "User who created. Click to sort." %>
+      <% elsif params[:order] == 'creator_d' %>
+      <%= link_to "User&nbsp;<", {:overwrite_params => {:order => nil}},
+          :title => "User who created." %>
+      <% else %>
+      <%= link_to "User", {:overwrite_params => {:order => 'creator_a'}},
+          :title => "User who created. Click to sort." %>
+      <% end %>
+    </th>
+    <th class="date">
+      <% if params[:order] == 'created_a' %>
+      <%= link_to "Date&nbsp;>", {:overwrite_params => {:order => nil}},
+          :title => "Date created.." %>
+      <% elsif params[:order] == 'created_d' %>
+      <%= link_to "Date&nbsp;<", {:overwrite_params => {:order => 'created_a'}},
+          :title => "Date created. Click to sort" %>
+      <% else %>
+      <%= link_to "Date", {:overwrite_params => {:order => 'created_d'}},
+          :title => "Date created. Click to sort." %>
+      <% end %>
+    </th>
+    <th class="description">
+      Description
+    </th>
+    <th class="ops"></th>
+  </tr>
+  <%= render :partial => "board_li", :collection => @boards, :as => :board %>
+</tbody></table>
 
+<%= javascript_tag "DateHelper.convert_all_times_to_words('#boards');" %>

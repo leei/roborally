@@ -2,6 +2,11 @@
     float: right;
     background-color: #ff8;
     border: 1px solid silver;
+    padding: 2px 4px;
+}
+
+.page_numbers {
+    float: right;
 }
 
 table.formTable>tbody>tr>th {
@@ -13,6 +18,42 @@ table.formTable label {
     font-weight: normal;
     font-style: italic;
     margin-left: 2px;
+}
+
+table.boards {
+    border: 1px solid silver;
+}
+
+table.boards tr.even {
+    background-color: #eee;
+}
+
+table.boards tr.odd {
+}
+
+table.boards .name {
+    text-align: left;
+    width: 16em;
+}
+table.boards .date {
+    text-align: left;
+    xwidth: 8em;
+}
+table.boards th.date {
+    width: 6em;
+}
+table.boards .creator {
+    text-align: left;
+    xwidth: 8em;
+}
+table.boards th.creator {
+    width: 6em;
+}
+table.boards .description {
+    text-align: left;
+    width: 64em;
+}
+table.boards .ops {
 }
 
 table#boardEdit td.layout {
@@ -169,4 +210,12 @@ table.board tr>td {
 .board .turn_w_r_2 {
     background-color: #ccf; color: #282;
     background: url(/images/turn_w_r_2_48.png);
+}
+.board .repair_1 {
+    background-color: #ccf; color: #282;
+    background: url(/images/repair_48.png);
+}
+.board .repair_2 {
+    background-color: #ccf; color: #282;
+    background: url(/images/repair_2_48.png);
 }

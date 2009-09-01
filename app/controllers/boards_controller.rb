@@ -7,9 +7,29 @@ class BoardsController < ApplicationController
   before_filter :require_user, :only => %w(new)
 
   def index
+    find_opts = { }
+    if params[:order]
+      find_opts[:order] =
+        case params[:order]
+        when "name_d"; "name DESC"
+        when "name_a"; "name ASC"
+        when "creator_d"
+          find_opts[:include] = :creator
+          "users.login DESC"
+        when "creator_a"
+          find_opts[:include] = :creator
+          "users.login ASC"
+        when "created_d"; 'created_at DESC'
+        when "created_a"; "created_at ASC"
+        end
+    end
     conds = { }
     conds[:creator_id] = params[:creator] if params[:creator]
-    @boards = Board.find(:all, :conditions => conds )
+    find_opts[:conditions] = conds unless conds.empty?
+    find_opts[:page] = params[:page] || 1
+    find_opts[:per_page] = 15
+
+    @boards = Board.paginate(:all, find_opts)
   end
 
   def show

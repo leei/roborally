@@ -1,0 +1,22 @@
+<h1>Games#index</h1>
+<div class="page_numbers">
+  <%= will_paginate @games %>
+</div>
+<div>
+  Games: <%= game_links %>.
+  <% if current_user %> <%= link_to "Create Game", new_game_url() %> <% end %>
+</div>
+
+<% if @games.empty? %>
+No games.
+<% else %>
+<table>
+  <thead>
+    <tr><th>Host</th><th>Board</th><th>Created</th></tr>
+  </thead>
+  <tbody>
+    <%= render :partial => "games/game_tr", :collection => @games %>
+  </tbody>
+</table>
+<tr>
+<% end %>

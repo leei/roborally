@@ -1,0 +1,18 @@
+<% game = game_tr %>
+<tr>
+  <td><%= link_to game.host.login, user_path(game.host) %></td>
+  <td><%= link_to game.board.name, board_path(game.board) %></td>
+  <td><%= game.created_at.to_formatted_s(:short) %></td>
+  <td>
+    <% if game.started? %>
+      Already Started
+    <% else %>
+      <% if game.host == current_user %>
+        <!-- TODO: How do we start this? -->
+        <%= link_to "Start", game_path(game) %>
+        <%= link_to "Edit", edit_game_path(game) %>
+        <%= link_to "Destroy", game_path(game), :method => :delete %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

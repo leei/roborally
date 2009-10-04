@@ -1,0 +1,10 @@
+<table><tbody>
+<% form_for @game do |f| %>
+ <%= f.hidden_field :host_id %>
+ <tr>
+   <th><%= f.label :board_id, "Board" %></th>
+   <td><%= f.select :board_id, Board.all.map{ |b| [b.name, b.id] }, { :include_blank => true } %></td>
+ </tr>
+ <tr><td ncols="2"><%= f.submit "Save" %></td></tr>
+<% end %>
+</tbody></table>

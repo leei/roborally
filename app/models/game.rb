@@ -6,7 +6,9 @@ class Game < ActiveRecord::Base
   # associations
 
   belongs_to :host, :class_name => "User"
-  has_many :players
+  belongs_to :board
+
+  has_many :players, :dependent => :destroy
 
   #------------
   # validations

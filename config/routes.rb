@@ -40,6 +40,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user_session
 
   map.resources :boards
+  map.resources :games
 
   map.root :controller => :user_sessions, :action => :new
 
